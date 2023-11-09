@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform"]
 lock_version = "4.4"
-content_hash = "sha256:65c6b17149d2c6167441f7d68b4015c5cbd1e80308079362f088a297f7d9afe1"
+content_hash = "sha256:b1b3eef7d4d12f1182783c2925c8bcc72fad5306273093c88a5d971fc3d54970"
 
 [[package]]
 name = "asgiref"
@@ -30,6 +30,15 @@ dependencies = [
 files = [
     {file = "Django-4.2.7-py3-none-any.whl", hash = "sha256:e1d37c51ad26186de355cbcec16613ebdabfa9689bbade9c538835205a8abbe9"},
     {file = "Django-4.2.7.tar.gz", hash = "sha256:8e0f1c2c2786b5c0e39fe1afce24c926040fad47c8ea8ad30aaf1188df29fc41"},
+]
+
+[[package]]
+name = "django-dotenv"
+version = "1.4.2"
+summary = "foreman reads from .env. manage.py doesn't. Let's fix that."
+files = [
+    {file = "django-dotenv-1.4.2.tar.gz", hash = "sha256:3812bb0f4876cf31f902aad140f0645e120e51ee30eb7c40c22050f58a0e4adb"},
+    {file = "django_dotenv-1.4.2-py2.py3-none-any.whl", hash = "sha256:a9b1b40a70bd321acd231926acedb9bd2c5e873e33a1873b34a7276d196a765e"},
 ]
 
 [[package]]
