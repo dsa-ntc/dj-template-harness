@@ -1,7 +1,6 @@
 {% extends "./wrapper.html" %}
-{% load actionkit_tags humanize %}
 
-{% block css_additions %}
+{% block extra_css %}
     {% for profile in active %}
         {% if profile.payment_processor_information.use_vzero %}
             {% once %}
