@@ -1,37 +1,38 @@
 {
-	"name": "Python 3",
-	"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
-	"features": {
-		"ghcr.io/devcontainers-contrib/features/pdm:2": {}
-	},
-	"customizations": {
-		"vscode": {
-		  "settings": {
-			"python.defaultInterpreterPath": ".venv/bin/python",
-			"[python]": {
-			  "editor.formatOnSave": true,
-			  "editor.codeActionsOnSave": {
-				"source.fixAll": true,
-				"source.organizeImports": true
-			  },
-			  "editor.defaultFormatter": "charliermarsh.ruff"
-			},
-			"notebook.formatOnSave.enabled": true,
-			"files.insertFinalNewline": true
-		  },
-		  "extensions": [
-			"ms-python.python",
-			"ms-python.vscode-pylance",
-			"charliermarsh.ruff",
-			"eamodio.gitlens",
-			"GitHub.copilot",
-			"esbenp.prettier-vscode",
-			"redhat.vscode-yaml",
-			"ms-azuretools.vscode-docker",
-			"tamasfe.even-better-toml",
-			"GitHub.vscode-github-actions",
-			"ms-toolsai.jupyter"
-		  ]
-		}
-	}
+  "name": "Python 3",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/pdm:2": {},
+    "ghcr.io/devcontainers-contrib/features/pre-commit:2": {}
+  },
+  "postCreateCommand": "pdm install",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": ".venv/bin/python",
+        "[python]": {
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": true,
+            "source.organizeImports.ruff": true
+          },
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "files.insertFinalNewline": true
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "eamodio.gitlens",
+        "GitHub.copilot",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-yaml",
+        "ms-azuretools.vscode-docker",
+        "tamasfe.even-better-toml",
+        "GitHub.vscode-github-actions",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  }
 }
