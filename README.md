@@ -1,3 +1,11 @@
+# Djange Template Harness
+
+A minimal Django project for testing Jinja templates.
+
+Dev dependencies have been tested in Codespaces -- developers needing alternate environments may reverse engineer dependencies from `.devcontainer/devcontainer.json`.
+
+# Rend
+
 Run the server and open the development URL:
 
 ```
