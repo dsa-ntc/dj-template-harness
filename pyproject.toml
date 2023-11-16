@@ -2,36 +2,36 @@
 name = "dj-template-harness"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "DSA NTC", email = "ntc@dsacommittees.org"},
-]
+authors = [{ name = "DSA NTC", email = "ntc@dsacommittees.org" }]
 dependencies = [
-    "django>=4.2.7",
-    "ruff>=0.1.5",
-    "django-extensions>=3.2.3",
-    "werkzeug>=3.0.1",
-    "django-dotenv>=1.4.2",
-    "wagtail>=5.2",
+    "django",
+    "ruff",
+    "django-extensions",
+    "werkzeug",
+    "django-dotenv",
+    "wagtail",
+    "pre-commit",
+    "pip-tools",
 ]
 requires-python = ">=3.12"
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 
 [tool.ruff]
-select=["ALL"]
-ignore=["COM812", "ISC001"]
-exclude=["**/migrations/*"]
-fix=true
+select = ["ALL"]
+ignore = ["COM812", "ISC001"]
+exclude = ["**/migrations/*"]
+fix = true
 line-length = 100
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
-"**/tests.py" = [ "D100", "D101", "D102", "ANN101", "ANN201", "S101" ]
-"**/admin.py" = ["D101", "D102", ]
-"**/apps.py" = ["D100", "D101", "D102" ]
+"**/tests.py" = ["D100", "D101", "D102", "ANN101", "ANN201", "S101"]
+"**/admin.py" = ["D101", "D102"]
+"**/apps.py" = ["D100", "D101", "D102"]
 
 
 [tool.setuptools]
-py-modules = []
+packages = ["dj_template_harness", "actionkit"]
