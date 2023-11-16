@@ -9,7 +9,7 @@
     "DJANGO_SECRET_KEY": "$(python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
   },
   "postCreateCommand": "python -m pip install .",
-  "postStartCommand": "python manage.py migrate",
+  "postStartCommand": "python manage.py migrate && pre-commit install",
   "customizations": {
     "vscode": {
       "settings": {
