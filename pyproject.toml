@@ -20,11 +20,18 @@ license = {text = "MIT"}
 [tool.ruff]
 select=["ALL"]
 ignore=["COM812", "ISC001"]
+exclude=["**/migrations/*"]
 fix=true
 line-length = 100
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests.py" = [ "D100", "D101", "D102", "ANN101", "ANN201", "S101" ]
+"**/admin.py" = ["D101", "D102", ]
+"**/apps.py" = ["D100", "D101", "D102" ]
+
 
 [tool.setuptools]
 py-modules = []

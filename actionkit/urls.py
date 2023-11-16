@@ -1,3 +1,8 @@
+"""URL Configuration for ActionKit app.
+
+In Django, URL configuration maps templates to views.
+"""
+
 from django.urls import path
 from django.views.generic import TemplateView
 
@@ -8,5 +13,4 @@ urlpatterns = [
         TemplateView.as_view(template_name="recurring_update.html"),
         name="recurring_update",
     ),
-
 ]
