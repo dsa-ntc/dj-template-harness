@@ -12,26 +12,34 @@ dependencies = [
     "wagtail",
     "pre-commit",
     "pip-tools",
+    "hypothesis[django]",
 ]
 requires-python = ">=3.12"
 readme = "README.md"
 license = { text = "MIT" }
 
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = ["/actionkit", "/dj_template_harness"]
+
+
 [tool.ruff]
 select = ["ALL"]
-ignore = ["COM812", "ISC001"]
+ignore = ["COM812", "ISC001", "D105"]
 exclude = ["**/migrations/*"]
 fix = true
 line-length = 100
-
-[tool.ruff.lint.pydocstyle]
-convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
 "**/tests.py" = ["D100", "D101", "D102", "ANN101", "ANN201", "S101"]
 "**/admin.py" = ["D101", "D102"]
 "**/apps.py" = ["D100", "D101", "D102"]
 
+[tool.ruff.lint.pydocstyle]
+convention = "google"
 
 [tool.setuptools]
-packages = ["dj_template_harness", "actionkit"]
+packages = ["dj_template_harness"]

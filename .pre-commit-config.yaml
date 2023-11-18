@@ -3,10 +3,11 @@ repos:
     rev: v0.1.5
     hooks:
       - id: ruff
-        args: [ --fix ]
+        args: [--fix]
       - id: ruff-format
 
   - repo: https://github.com/jazzband/pip-tools
     rev: 7.3.0
     hooks:
       - id: pip-compile
+    files: ^(\.devcontainer|pyproject\.toml)$

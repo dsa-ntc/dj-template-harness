@@ -1,19 +1,21 @@
 {
   "name": "Django Template Harness",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/hatch:2": {}
+  },
   "containerEnv": {
-    "DJANGO_SECRET_KEY": "$(python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())",
+    "DJANGO_SECRET_KEY": "dev-key",
     "DJANGO_SETTINGS_MODULE": "dj_template_harness.settings"
   },
-  "updateContentCommand": "pip install --upgrade pip",
-  "postCreateCommand": "./install.sh",
+  "onCreateCommand": "python -m venv .venv && python -m pip install --upgrade pip",
+  "postCreateCommand": "sudo .venv/bin/pip install . && sudo .venv/bin/pre-commit install ",
+  "postStartCommand": ".venv/bin/django-admin migrate",
   "customizations": {
     "vscode": {
       "settings": {
         "editor.formatOnSave": true,
-        "python.venvFolders": [
-          ".venv"
-        ],
+        "python.defaultInterpreterPath": ".venv/bin/python",
         "[python]": {
           "editor.codeActionsOnSave": {
             "source.fixAll.ruff": true,
@@ -23,20 +25,20 @@
         },
         "terminal.integrated.environmentChangesIndicator": "on",
         "python.terminal.activateEnvInCurrentTerminal": true,
-        "files.insertFinalNewline": true
+        "files.insertFinalNewline": true,
+        "files.associations": {
+          "**.html*": "jinja-html"
+        }
       },
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
         "charliermarsh.ruff",
         "eamodio.gitlens",
-        "GitHub.copilot",
         "redhat.vscode-yaml",
-        "ms-azuretools.vscode-docker",
         "tamasfe.even-better-toml",
-        "GitHub.vscode-github-actions",
-        "ms-toolsai.jupyter",
-        "samuelcolvin.jinjahtml"
+        "samuelcolvin.jinjahtml",
+        "yzhang.markdown-all-in-one"
       ]
     }
   }
