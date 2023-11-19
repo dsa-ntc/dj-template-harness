@@ -355,16 +355,16 @@
 
 
         {% if page.name == "sign-dsa-100k-pledge-3" or page.name == "dsa-100k-pledge" %}
-            <div class="ak-page-header" style="height: 100px;">
+            <header class="ak-page-header" style="height: 100px;">
                 <div class="ak-page-header-contents">
                     <h1>Democratic Socialists of America / Socialistas Democraticos de America</h1>
                     <div class="ak-page-nav"></div>
                 </div>
-            </div>
+            </header>
         {% elif page.name == 'membership_embed' %}
 
         {% else %}
-            <div class="ak-page-header">
+            <header class="ak-page-header">
                 <div class="ak-page-header-contents">
                     {% if page.name == 'legacy-circle' %}
                         <h1>Democratic Socialist Legacy Circle Interest Form</h1>
@@ -372,7 +372,7 @@
                         <div class="ak-page-nav"></div>
                     {% endif %}
                 </div>
-            </div>
+            </header>
         {% endif %}
 
         {% if page.name != 'membership_embed' %}
@@ -385,12 +385,12 @@
 
         {% if page.name != 'membership_embed' %}
 
-            <div class="ak-page-footer">
+            <footer class="ak-page-footer">
                 <div class="ak-page-footer-contents">
                     <span><a href="{{ templateset.custom_fields.privacy|default:'http://www.dsausa.org/privacy_policy' }}"></a></span>
                     <span><a href="{{ templateset.custom_fields.contact|default:'http://www.dsausa.org/contact_us' }}"></a></span>
                 </div>
-            </div>
+            </footer>
 
         {% endif %}
 
