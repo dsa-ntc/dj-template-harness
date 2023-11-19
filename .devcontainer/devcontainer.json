@@ -8,9 +8,9 @@
     "DJANGO_SECRET_KEY": "dev-key",
     "DJANGO_SETTINGS_MODULE": "dj_template_harness.settings"
   },
-  "onCreateCommand": "python -m venv .venv && python -m pip install --upgrade pip",
-  "postCreateCommand": "sudo .venv/bin/pip install . && sudo .venv/bin/pre-commit install ",
-  "postStartCommand": ".venv/bin/django-admin migrate",
+  "onCreateCommand": "python -m pip install --upgrade pip",
+  "postCreateCommand": "pip install . && pre-commit install ",
+  "postStartCommand": "django-admin migrate",
   "customizations": {
     "vscode": {
       "settings": {
